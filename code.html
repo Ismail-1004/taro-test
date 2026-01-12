@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tarot &amp; Esoteric - Онлайн-консультации</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7311d4",
+                        "gold": "#D4AF37",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0f0914", // Deep charcoal-purple mix
+                        "midnight": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .mystic-glow {
+            box-shadow: 0 0 40px 10px rgba(115, 17, 212, 0.2);
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:hover {
+            border: 1px solid rgba(212, 175, 55, 0.8);
+        }
+        .floating-card {
+            transition: transform 0.3s ease-out;
+        }
+        .floating-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+        .silk-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/40">
+<div class="relative min-h-screen overflow-x-hidden silk-texture">
+<!-- Background Accents -->
+<div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-background-dark/80 backdrop-blur-md px-6 md:px-40 py-4">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-gold">
+<span class="material-symbols-outlined text-4xl">auto_awesome</span>
+</div>
+<h2 class="font-serif text-xl font-bold tracking-wide">Tarot &amp; Esoteric</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#process">Процесс</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#services">Услуги</a>
+<a class="text-sm font-medium hover:text-gold transition-colors" href="#reviews">Отзывы</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
+                        Записаться
+                    </button>
+<div class="flex gap-1">
+<a class="p-2 text-white/70 hover:text-gold transition-colors" href="#">
+<span class="material-symbols-outlined">send</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="px-6 md:px-40 py-16 md:py-24 max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="space-y-4">
+<span class="text-gold font-medium tracking-[0.2em] uppercase text-xs">Ваш проводник в мире тайного</span>
+<h1 class="font-serif text-5xl md:text-7xl leading-tight">
+                            Онлайн-консультации <br/>
+<span class="text-primary italic">Tarot &amp; Esoteric</span>
+</h1>
+<p class="text-white/60 text-lg leading-relaxed max-w-lg">
+                            Раскройте тайны своего будущего и найдите путь к гармонии. Найдите ответы на самые важные вопросы с помощью древних знаний и современной интуиции.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/20 transition-all">
+                            Записаться на сеанс
+                        </button>
+<button class="border border-white/10 hover:border-gold/50 bg-white/5 px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                            Узнать больше
+                        </button>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[500px] flex items-center justify-center order-1 lg:order-2">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 animate-pulse"></div>
+<!-- Cards Visual -->
+<div class="relative w-full h-full flex items-center justify-center gap-4">
+<div class="floating-card w-32 md:w-44 h-56 md:h-72 bg-midnight rounded-xl gold-border p-2 rotate-[-15deg] translate-y-8 flex flex-col justify-between items-center mystic-glow overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg opacity-80" data-alt="Tarot card The Moon illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPpTYz08VfJXc7ZtKln3oq9Ea4C9YSLX0B0RsAg_JvuuLSceWgsa5gYdNGql29xKWmci0Fve07AhwIMWQ5Z6zI-RPnXYLyxhW7CwRSqeXRF356rxhQhorwWKIj_wOJHouAoZS8lHPrgMzqGoaUvslL8smjqG8WUq4E5bd8xzumU4MUIOcgNWl1M9_61ohV931ZlqQ_kiDIF4iPk3MUudZGrWIHbo6WY01HGz22xstiKoEUpY7qouF-tOujC_CL3xvtpRNjwPNx_qg');"></div>
+</div>
+<div class="floating-card w-32 md:w-44 h-56 md:h-72 bg-midnight rounded-xl gold-border p-2 z-10 translate-y-[-20px] flex flex-col justify-between items-center mystic-glow overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg" data-alt="Tarot card The Sun illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQKbLdMTceyfgZhZKRBierGYz6AR73cZX6M6vnB_zodyBzC85ogF-u7YP5v41OCj2W-eSaUKf3zdWZJ4vFog7kDm3BPFUF6pVT2AcLxqlUb-NiM6rC5ALE76Kjfh-8xq3HElZqc3en1O4zFbwvu0wsr4I-i5C8AtyDU7NIgrPijuKEFWeQyR4zCn3xI3I0BS6E20dv2VMvM5VIboln0ciy1Wkc2acLOnVQYj0eLLr2ABi4MqSTOOjWWa8oWrgvGQL0vYfvU0NAbt4');"></div>
+</div>
+<div class="floating-card w-32 md:w-44 h-56 md:h-72 bg-midnight rounded-xl gold-border p-2 rotate-[15deg] translate-y-8 flex flex-col justify-between items-center mystic-glow overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg opacity-80" data-alt="Tarot card Star illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBTHZ79lO5SYH4J_rzlENf0UowI3yX1eMUDtH1k_EVKPTIEUpFkue5SpxdGzBpfVIV8hISZkn1VtRbgKcgg-vYbERsST_ChU5xN_378oCcXWk5xSZsA_u-GFqWpiHOyKsRjrrS2W2PmoU-orVjW0nn8NiJ9Z801xH6_9yqEmyslq86N9p7qwD5zXAzGRIY8a8p3QawuEkskJ1Cbq12L6iIil6c_AE-p2_3C2bpZRV3DUB5uWVYjaQiy9bSZDjb45Uqi8f7u4bZ7uo');"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Socials Bar -->
+<section class="border-y border-white/5 bg-midnight/50 py-6">
+<div class="px-6 md:px-40 max-w-[1280px] mx-auto flex flex-wrap justify-center md:justify-start gap-12">
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white/5 p-4 group-hover:bg-primary/20 transition-all border border-white/5 group-hover:border-primary/50">
+<span class="material-symbols-outlined text-white">send</span>
+</div>
+<span class="text-xs font-medium text-white/50 group-hover:text-white transition-colors">Telegram</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white/5 p-4 group-hover:bg-primary/20 transition-all border border-white/5 group-hover:border-primary/50">
+<span class="material-symbols-outlined text-white">camera</span>
+</div>
+<span class="text-xs font-medium text-white/50 group-hover:text-white transition-colors">Instagram</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#reviews">
+<div class="rounded-full bg-white/5 p-4 group-hover:bg-primary/20 transition-all border border-white/5 group-hover:border-primary/50">
+<span class="material-symbols-outlined text-white">forum</span>
+</div>
+<span class="text-xs font-medium text-white/50 group-hover:text-white transition-colors">Отзывы</span>
+</a>
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white/5 p-4 group-hover:bg-primary/20 transition-all border border-white/5 group-hover:border-primary/50">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<span class="text-xs font-medium text-white/50 group-hover:text-white transition-colors">Ритуалы</span>
+</a>
+</div>
+</section>
+<!-- Process Section -->
+<section class="px-6 md:px-40 py-24 max-w-[1280px] mx-auto" id="process">
+<div class="flex flex-col lg:flex-row gap-16 items-start">
+<div class="flex-1 space-y-8">
+<h2 class="font-serif text-4xl md:text-5xl leading-tight">Как проходит <br/> <span class="text-gold italic">онлайн-консультация</span></h2>
+<p class="text-white/60 text-lg leading-relaxed">
+                        Ваш путь к пониманию начинается здесь. Мы обеспечиваем полную конфиденциальность и глубокое погружение в ваш запрос, используя сочетание классического таро и современной астрологии.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">visibility</span>
+<h4 class="font-bold mb-2">Конфиденциально</h4>
+<p class="text-sm text-white/50 leading-relaxed">Все данные и детали сессии остаются строго между нами.</p>
+</div>
+<div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">schedule</span>
+<h4 class="font-bold mb-2">Оперативно</h4>
+<p class="text-sm text-white/50 leading-relaxed">Получите развернутый ответ в течение 24 часов.</p>
+</div>
+</div>
+</div>
+<div class="lg:w-[450px] bg-midnight rounded-2xl gold-border p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl pointer-events-none"></div>
+<h3 class="font-serif text-2xl mb-8">Что потребуется:</h3>
+<div class="space-y-6 relative z-10">
+<div class="flex items-center gap-4 group">
+<div class="size-14 rounded-xl bg-background-dark flex items-center justify-center border border-white/10 group-hover:border-gold/50 transition-all overflow-hidden" data-alt="Mystical placeholder for photo">
+<span class="material-symbols-outlined text-gold opacity-50">person</span>
+</div>
+<div>
+<p class="font-bold text-white">Ваше фото</p>
+<p class="text-xs text-white/50">Для энергетической связи</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="size-14 rounded-xl bg-background-dark flex items-center justify-center border border-white/10 group-hover:border-gold/50 transition-all overflow-hidden" data-alt="Mystical placeholder for birth date">
+<span class="material-symbols-outlined text-gold opacity-50">event</span>
+</div>
+<div>
+<p class="font-bold text-white">Дата рождения</p>
+<p class="text-xs text-white/50">Расчет влияния звезд</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="size-14 rounded-xl bg-background-dark flex items-center justify-center border border-white/10 group-hover:border-gold/50 transition-all overflow-hidden" data-alt="Mystical placeholder for full name">
+<span class="material-symbols-outlined text-gold opacity-50">badge</span>
+</div>
+<div>
+<p class="font-bold text-white">Полное имя</p>
+<p class="text-xs text-white/50">Для персонализации запроса</p>
+</div>
+</div>
+</div>
+<div class="mt-12 aspect-[4/3] rounded-xl overflow-hidden gold-border shadow-2xl relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Atmospheric image of a crystal ball and tarot cards" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYAmYovMs9gTqPL1oUm_HLsQscf58j0gtWwCw6d3oPV0SX2hB53M1mJ5jIoOpakU-HwdMaLYJ0-ouV6m8M3DjsoQVt3x7NkVktUEyN9hQlf6iu-c4OYYOkkX2k9ttM_lmn7pjdm2IRhcFXhSUc0f0XaQ-wZ6i34-4yH12H1La3x3wg4NkXE87MbBfb9ru46QzSlXlbMvehgOBMplfJaidQiBEeB_3_qxxskBKVPIH3p2JYszWJonbUDETbCbNUVheBhkhZRBHQ2gk');"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-6 md:px-40 py-24 bg-midnight/30" id="services">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16 space-y-4">
+<span class="text-gold font-medium tracking-widest uppercase text-xs">Предсказания и анализ</span>
+<h2 class="font-serif text-4xl md:text-5xl">Наши услуги</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="p-8 bg-midnight/80 rounded-2xl gold-border hover:shadow-2xl hover:shadow-primary/10 transition-all group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">playing_cards</span>
+<h3 class="text-2xl font-serif mb-4">Таро: 1 вопрос</h3>
+<p class="text-white/50 text-sm mb-8 leading-relaxed">Быстрый и четкий ответ на конкретный жизненный вопрос. Идеально для экспресс-анализа ситуации.</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-gold font-serif">1 500 ₽</span>
+<button class="bg-white/5 hover:bg-primary px-4 py-2 rounded-lg text-sm font-bold transition-all">Выбрать</button>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="p-8 bg-midnight/80 rounded-2xl gold-border hover:shadow-2xl hover:shadow-primary/10 transition-all group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">astrophotography_off</span>
+<h3 class="text-2xl font-serif mb-4">Натальная карта</h3>
+<p class="text-white/50 text-sm mb-8 leading-relaxed">Глубокий разбор вашей судьбы, талантов и кармических задач на основе положения звезд при рождении.</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-gold font-serif">4 500 ₽</span>
+<button class="bg-white/5 hover:bg-primary px-4 py-2 rounded-lg text-sm font-bold transition-all">Выбрать</button>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="p-8 bg-midnight/80 rounded-2xl gold-border hover:shadow-2xl hover:shadow-primary/10 transition-all group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">favorite</span>
+<h3 class="text-2xl font-serif mb-4">Тема: Любовь</h3>
+<p class="text-white/50 text-sm mb-8 leading-relaxed">Детальный разбор отношений, совместимости и перспектив союза. Поиск причин одиночества.</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-gold font-serif">3 000 ₽</span>
+<button class="bg-white/5 hover:bg-primary px-4 py-2 rounded-lg text-sm font-bold transition-all">Выбрать</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="px-6 md:px-40 py-24 max-w-[1280px] mx-auto overflow-hidden" id="reviews">
+<div class="flex items-end justify-between mb-16">
+<div class="space-y-4">
+<span class="text-gold font-medium tracking-widest uppercase text-xs">Благодарность</span>
+<h2 class="font-serif text-4xl md:text-5xl">Отзывы клиентов</h2>
+</div>
+<div class="flex gap-4">
+<button class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="p-8 bg-midnight/50 rounded-2xl border border-white/5 relative group">
+<div class="absolute -top-4 -right-4 size-24 bg-primary/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-12 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Portrait of a satisfied client" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk8Q1uLDi1S6wIAIGZPkhBI6KDi8Sqnyqil8haWWKnKJBULCTp6wzZOUhrdxNHli9F7YBeDlEFJsh5nKvP7lWBX4l4E0ARrOzVmS6RJUPwFzxnJy4qikKtYLWNQzC3gESE0Br6PtOf8KrddBSen32p2u13pMnJ6dCyVAiGasIzGheAyKvgcvgh03uFagcu4aUrsKJc-tCBVP0GJrqMwCjG--Cv0N0DfZGxqmpouChbaZqzlLO2NJU-w4TGBR1lvEpamHrKIxciePw');"></div>
+<div>
+<p class="font-bold">Елена С.</p>
+<div class="flex text-gold text-xs">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+</div>
+</div>
+<p class="text-white/60 italic leading-relaxed mb-6">
+                        "Невероятная точность! Консультация помогла мне принять правильное решение в бизнесе, когда я была на грани срыва. Спасибо за поддержку и свет."
+                    </p>
+<div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-background-dark/80 text-xs text-white/40">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span>Аудио-отзыв (0:45)</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-8 bg-midnight/50 rounded-2xl border border-white/5 relative group">
+<div class="absolute -top-4 -right-4 size-24 bg-primary/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-12 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Portrait of a satisfied client" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAV2Ny7SeXfL-HBSfn9hTUwMiWK-aJr4c05pZAbeRMv614CCT5WR20v6QjY3nMs-oWBrPTIui1-vqMk_7za16Lf687aPmmIYeJwGzIs4MRwbAIP6Lz3Yqizefa9mrGS7B7OyGnRPzqsGgQZ2P-2FeeHkwqOv9zNgSGIQx4LPX3Y91ppFabjP2Vvc8epAMKDz5yDjHmC484J4xA_IdVOyci422ugOsXgzkqJGE64JpZ7LBZjwpbrjHnOXmuuHdFs3v9rAW_zyJ7IMpI');"></div>
+<div>
+<p class="font-bold">Максим В.</p>
+<div class="flex text-gold text-xs">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+</div>
+</div>
+<p class="text-white/60 italic leading-relaxed mb-6">
+                        "Заказывал натальную карту. Очень глубокий разбор, многие вещи стали понятны. Теперь знаю, в каком направлении развиваться дальше."
+                    </p>
+<div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-background-dark/80 text-xs text-white/40">
+<span class="material-symbols-outlined text-sm">video_library</span>
+<span>Видео-сообщение</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="p-8 bg-midnight/50 rounded-2xl border border-white/5 relative group">
+<div class="absolute -top-4 -right-4 size-24 bg-primary/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex items-center gap-4 mb-6">
+<div class="size-12 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Portrait of a satisfied client" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJdpzSflGiK3oW4kWVO1lz7mtXMRd2oLoZUU8EvnwvHACajUMQkioB0QD2GW4Pb5sn8mhaUQo36Wz7L62AELW0rhUoTCOc-i7FEdLZGjd-pVewmEziFW5gL56cZYk3Lwh9ewjlBefxalx_8SkWr0741nZ2uWoJQs0-TL_DnhUvR0EDnRWjrCcGAFUV4NNx3Ya3C1gpAcLy8BPusG2Exo4t95qiED1MAudhx5PMuAW3p0NBFiTq87dpzBHdafN7jfFp9uwQztkmbtM');"></div>
+<div>
+<p class="font-bold">Анна К.</p>
+<div class="flex text-gold text-xs">
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+<span class="material-symbols-outlined text-xs fill-1">star</span>
+</div>
+</div>
+</div>
+<p class="text-white/60 italic leading-relaxed mb-6">
+                        "Расклад на любовь оказался пророческим. Прошло всего два месяца, и всё сбылось до мелочей. Рекомендую всем, кто ищет правду."
+                    </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-white/5 pt-16 pb-8">
+<div class="px-6 md:px-40 max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl text-gold">auto_awesome</span>
+<h2 class="font-serif text-2xl font-bold tracking-wide">Tarot &amp; Esoteric</h2>
+</div>
+<p class="text-white/40 text-sm max-w-sm leading-relaxed">
+                            Помогаем найти ответы в мире символов и звезд. Профессиональный подход к эзотерике с уважением к традициям.
+                        </p>
+</div>
+<div>
+<h4 class="font-bold mb-6">Навигация</h4>
+<ul class="space-y-4 text-sm text-white/50">
+<li><a class="hover:text-gold transition-colors" href="#">Главная</a></li>
+<li><a class="hover:text-gold transition-colors" href="#process">О процессе</a></li>
+<li><a class="hover:text-gold transition-colors" href="#services">Услуги</a></li>
+<li><a class="hover:text-gold transition-colors" href="#reviews">Отзывы</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Контакты</h4>
+<ul class="space-y-4 text-sm text-white/50">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+                                contact@tarot-esoteric.com
+                            </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">send</span>
+                                @tarot_expert
+                            </li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5 text-xs text-white/20">
+<p>© 2024 Tarot &amp; Esoteric. Все права защищены.</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">Политика конфиденциальности</a>
+<a class="hover:text-white transition-colors" href="#">Оферта</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
